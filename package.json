@@ -1,7 +1,7 @@
 {
-  "name": "cargon",
+  "name": "fifthwheelco",
   "version": "1.0.0",
-  "description": "Cargon static website",
+  "description": "fifthwheelco static website",
   "main": "index.js",
   "scripts": {
     "start": "gulp",

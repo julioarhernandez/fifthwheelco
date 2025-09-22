@@ -359,7 +359,7 @@ $('.ca-testimonial-2').slick({
 // Slider 3 Active
 $('.ca-slider-active-3').slick({ 
   arrows: false,
-  dots: true,
+  dots: false,
   centerPadding: '0px',
   slidesToShow: 1,
   slidesToScroll: 1,
