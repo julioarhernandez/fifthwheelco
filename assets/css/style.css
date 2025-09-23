@@ -5722,14 +5722,14 @@ iframe.ca-map-4 {
     background: #FFEFE7;
     line-height: 40px;
     text-align: center;
-    color: #FF5E14;
+    color: #ff2840;
     font-size: 20px;
     border-radius: 50px;
     margin-right: 16px;
     transition: .3s;
 }
 .ca-footer-social ul li a:hover{
-    background: #FF5E14;
+    background: #ff2840;
     color:#fff;
     transition: .3s;
 }
