@@ -139,9 +139,10 @@
         top: 0px !important;
     }
     .header-3 .ca-offcanvas-toogle {
-        border: 1px solid #02000E;
+        /* border: 1px solid #02000E; */
         padding: 5px 8px;
         border-radius: 7px;
+        border: none !important;
     }
     .ca-slider-active-3 .slick-dots {
         display: none !important;
@@ -727,9 +728,10 @@
         border-radius: 0;
     }
     .header-3 .ca-offcanvas-toogle {
-        border: 1px solid #02000E;
+        /* border: 1px solid #02000E; */
         padding: 5px 8px;
         border-radius: 7px;
+        border: none !important;
     }
 
     .header-area-3.stiky {

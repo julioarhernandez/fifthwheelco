@@ -69,6 +69,7 @@
                            <li><a href="about.html">About</a></li>
                            <li><a href="projects.html">Projects</a></li>
                            <li><a href="contact.html">Contact</a></li>
+                           <li><a href="#" id="payment-link">Payment</a></li>
                         </ul>
                      </nav>
                   </div>
@@ -116,6 +117,9 @@
                               </li>
                               <li>
                                  <a href="/contact.html">Contact</a>
+                              </li>
+                              <li>
+                                 <a href="#" id="mobile-payment-link">Payment</a>
                               </li>
                             </ul></nav>
             </div>
@@ -191,4 +195,155 @@
       </div>
       <div class="ca-offcanvas-overlay"></div>
       <!-- offcanvas end -->
-           
+      
+      <!-- Payment Modal -->
+      <div id="paymentModal" class="ca-modal">
+         <div class="ca-modal-content">
+            <span class="ca-close-modal">&times;</span>
+            <div class="payment-content text-center">
+               <h3 class="mb-4">Make a Payment</h3>
+               <div class="zelle-info mb-4">
+                  <p class="mb-3">Send payments to:</p>
+                  <p class="payment-email">fifthwheelc@gmail.com</p>
+               </div>
+               <div class="qr-code-container mb-4">
+                  <p class="mb-3">Or scan this QR code:</p>
+                  <!-- Replace the src with your actual QR code image -->
+                  <img src="assets/img/custom/zelle.png" alt="Payment QR Code" style="max-width: 200px; margin: 0 auto; display: block;">
+               </div>
+               <p class="text-muted">*Please include your order/invoice number in the payment note.</p>
+            </div>
+         </div>
+      </div>
+
+      <style>
+         /* Modal Styles */
+         .ca-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+         }
+
+         .ca-modal.show {
+            display: block;
+            opacity: 1;
+         }
+
+         .ca-modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: transform 0.3s ease-in-out;
+         }
+
+         .ca-modal.show .ca-modal-content {
+            transform: translateY(0);
+         }
+
+         .ca-close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #333;
+         }
+
+         .payment-email {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ff2840;
+            word-break: break-all;
+            margin: 15px 0;
+         }
+
+         .qr-code-container {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 300px;
+         }
+
+         @media (max-width: 576px) {
+            .ca-modal-content {
+               margin: 20% 15px;
+               padding: 20px;
+            }
+         }
+      </style>
+
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            // Get modal elements
+            const modal = document.getElementById('paymentModal');
+            const paymentLink = document.getElementById('payment-link');
+            const mobilePaymentLink = document.getElementById('mobile-payment-link');
+            const closeBtn = document.querySelector('.ca-close-modal');
+
+            // Function to open modal
+            function openModal() {
+               modal.classList.add('show');
+               document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            }
+
+            // Function to close modal
+            function closeModal() {
+               modal.classList.remove('show');
+               document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Event listeners
+            if (paymentLink) {
+               paymentLink.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  openModal();
+               });
+            }
+
+            if (mobilePaymentLink) {
+               mobilePaymentLink.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  openModal();
+                  // Close mobile menu if open
+                  const offcanvas = document.querySelector('.ca-offcanvas');
+                  const offcanvasToggle = document.querySelector('.ca-offcanvas-close-toggle');
+                  if (offcanvas && offcanvasToggle) {
+                     offcanvasToggle.click();
+                  }
+               });
+            }
+
+            if (closeBtn) {
+               closeBtn.addEventListener('click', closeModal);
+            }
+
+            // Close when clicking outside the modal content
+            window.addEventListener('click', function(e) {
+               if (e.target === modal) {
+                  closeModal();
+               }
+            });
+
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+               if (e.key === 'Escape' && modal.classList.contains('show')) {
+                  closeModal();
+               }
+            });
+         });
+      </script>
+   </body>
+</html>
