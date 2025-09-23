@@ -346,30 +346,54 @@
     <!-- video area start -->
     <section class="video-play-section">
        <div class="container">
-          <div class="ca-video-img br-7 p-relative z-index-1">
-             <img class="w-100" src="assets/img/service/v-play.png" alt="">
-             <a href="https://www.youtube.com/watch?v=HkYGxh1XUGQ" class="video-play-button popup-video">
-             <span><i class="fa-solid fa-play"></i></span>
+          <div class="ca-video-img br-7 p-relative z-index-1" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+             <video id="shopify-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" poster="assets/img/portfolio/ca-project3.4.png">
+                <source src="https://fifthwheelco.myshopify.com/cdn/shop/videos/c/vp/0f3183c95b5e4f4797bd5bca8c8eee2d/0f3183c95b5e4f4797bd5bca8c8eee2d.HD-1080p-3.3Mbps-47513429.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+             </video>
+             <a href="#" class="video-play-button" id="play-video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+                <span><i class="fa-solid fa-play"></i></span>
              </a>
-             <div class="ca-counter-3 p-absolute" style="display: none;">
-                <!-- single counter area -->
-                <div class="ca-counter-area-3">
-                   <h3 class="ca-counter-title text-white fnw-700 pb-12"><span class="counter">65</span>%</h3>
-                   <p>Air Freight</p>
-                </div>
-                <!-- single counter area -->
-                <div class="ca-counter-area-3">
-                   <h3 class="ca-counter-title text-white fnw-700 pb-12"><span class="counter">49</span>%</h3>
-                   <p>Land Freight</p>
-                </div>
-                <!-- single counter area -->
-                <div class="ca-counter-area-3" >
-                   <h3 class="ca-counter-title text-white fnw-700 pb-12"><span class="counter">51</span>%</h3>
-                   <p>Shipping Service</p>
-                </div>
-             </div>
           </div>
        </div>
+       <script>
+          document.addEventListener('DOMContentLoaded', function() {
+             const video = document.getElementById('shopify-video');
+             const playButton = document.getElementById('play-video');
+             const videoContainer = document.querySelector('.ca-video-img');
+             
+             // Toggle play/pause and update classes
+             function togglePlay() {
+                if (video.paused) {
+                   video.play();
+                   videoContainer.classList.add('ca-video-playing');
+                   playButton.style.display = 'none';
+                } else {
+                   video.pause();
+                   videoContainer.classList.remove('ca-video-playing');
+                   playButton.style.display = 'block';
+                }
+             }
+             
+             // Play button click
+             playButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                togglePlay();
+             });
+             
+             // Video click to pause
+             video.addEventListener('click', function() {
+                togglePlay();
+             });
+             
+             // Show play button when video ends
+             video.addEventListener('ended', function() {
+                videoContainer.classList.remove('ca-video-playing');
+                playButton.style.display = 'block';
+             });
+          });
+       </script>
+      
     </section>
     <!-- video area end -->
 

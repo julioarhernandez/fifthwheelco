@@ -1575,6 +1575,32 @@ section.ca-hero-area-1 {
     background: #FF5E14;
     z-index: 999;
   }
+
+  .video-play-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: #ff2840;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    right: 50% !important;
+ }
+ .video-play-button:hover {
+    background: #e61f36;
+    transform: translate(-50%, -50%) scale(1.1);
+ }
+ .video-play-button i {
+    margin-left: 5px;
+ }
+ .ca-video-playing:after{
+    content: none !important;
+    
+ }
   
   
   @keyframes waves {
