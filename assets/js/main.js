@@ -535,6 +535,45 @@ $('.ca-brand-slides-2').slick({
 	}
 	loader();
 
+  // contact form
+  
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxX_rOEz_1X9WaganAt0fmX6jhyrcbl1-L20DMhJwdSOlLGi9VTFXGowEPYLAPvzQGR4A/exec";
+
+  const form = document.querySelector(".ca-contact-from form");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // prevent form from submitting normally
+
+    // Collect form data
+    const formData = {
+      firstName: form.querySelector('input[placeholder="First Name"]').value,
+      lastName: form.querySelector('input[placeholder="Last Name"]').value,
+      phone: form.querySelector('input[placeholder="Phone Number"]').value,
+      email: form.querySelector('input[placeholder="Email Address"]').value,
+      serviceType: form.querySelector('select.ca-select').value,
+      message: form.querySelector('textarea#message').value
+    };
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.text();
+      alert("Form submitted successfully! " + result);
+
+      // Optionally, reset the form
+      form.reset();
+
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("There was an error sending your message. Please try again later.");
+    }
+  });
+
+
 
   
 });
