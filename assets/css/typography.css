@@ -211,10 +211,10 @@ a:focus {
     background: #D11207;
 }
 .theme-color-3{
-    color: #ff2840;
+    color: var(--main-color);
 }
 .theme-bg-3{
-    background: #ff2840;
+    background: var(--main-color);
 }
 
 .theme-bg-4{
