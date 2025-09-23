@@ -2320,7 +2320,7 @@ header.header-4 {
     line-height: 16px;
     font-weight: 400;
     padding: 8px 12px;
-    padding-left: 22px;
+    /* padding-left: 22px; */
 }
 .subtitle-bg-1:after {
     position: absolute;
