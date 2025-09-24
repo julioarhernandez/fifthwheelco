@@ -519,31 +519,25 @@
                       <h4 class="ca-contact-title-2 theme-black-2 fnw-600">Request Equipment Information</h4>
                       <p class="py-4">Get detailed specifications, pricing, and availability for our specialized machinery and towing solutions. Our experts are here to assist you.</p>
                    </div>
-                   <form action="/" method="POST">
+                   <form action="/" method="POST" id="contactForm" novalidate>
                       <div class="row">
                          <div class="col-md-6 mb-20">
-                            <input type="text" placeholder="First Name">
+                            <input type="text" placeholder="First Name *" id="name" required>
+                            <div class="invalid-feedback">Please provide your first name.</div>
                          </div>
                          <div class="col-md-6 mb-20">
-                            <input type="text" placeholder="Last Name">
+                            <input type="text" placeholder="Last Name" id="last_name">
                          </div>
                          <div class="col-md-6 mb-20">
-                            <input type="tel" placeholder="Phone Number">
+                            <input type="tel" placeholder="Phone Number" id="phone">
                          </div>
                          <div class="col-md-6 mb-20">
-                            <input type="email" placeholder="Email Address">
+                            <input type="email" placeholder="Email Address" id="email">
                          </div>
+                     
                          <div class="col-md-12 mb-20">
-                            <select class="nice-select wide ca-select">
-                               <option data-display="Service Type">Nothing</option>
-                               <option value="1">01</option>
-                               <option value="2">02</option>
-                               <option value="3">03</option>
-                               <option value="4">04</option>
-                            </select>
-                         </div>
-                         <div class="col-md-12 mb-20">
-                            <textarea name="message" id="message" placeholder="Message"></textarea>
+                            <textarea name="message" id="message" placeholder="Message *" required></textarea>
+                            <div class="invalid-feedback">Please provide a message.</div>
                          </div>
                          <div class="submit-btn">
                             <button class="ca-btn-primary-3 theme-bg-3 text-white br-50" type="submit" value="submit"> Send Message<span><i class="fa-solid fa-angle-right"></i></span></button>
@@ -588,7 +582,7 @@
                          </div>
                          <div class="ca-location-icbox-text">
                             <h4 class="ca-title fnw-600 theme-black-3 pb-12">Send Email</h4>
-                            <a href="mailto:fifthwheelco@gmail.com">fifthwheelco@gmail.com</a>
+                            <a href="mailto:fifthwheelc@gmail.com">fifthwheelc@gmail.com</a>
                          </div>
                       </div>
                    </div>

@@ -115,5 +115,77 @@
       <!-- <script src="/assets/js/wow.min.js"></script> -->
       <script src="/assets/js/waypoints.min.js"></script>
       <script src="/assets/js/main.js"></script>
+      
+      <!-- Contact Modal -->
+      <div id="contactModal" class="ca-modal">
+         <div class="ca-modal-content">
+            <span class="ca-close-modal">&times;</span>
+            <div class="contact-content text-center">
+               <h3 class="mb-4">Continue Conversation</h3>
+               <p class="mb-4">Select how you'd like to contact us:</p>
+               <div class="d-grid gap-3">
+                  <a id="whatsappLink" class="br-50 p-3 text-center text-white theme-bg-3 w-100" target="_blank">
+                     <span><img src="assets/img/custom/whatsapp.png" alt="WhatsApp" style="width: 20px; margin-right: 10px;"> WhatsApp</span>
+                  </a>
+                  <a id="smsLink" class="br-50 p-3 text-center text-white theme-bg-4 w-100" target="_blank">
+                     <span><img src="assets/img/custom/sms.png" alt="Sms" style="width: 20px; margin-right: 10px;"> SMS</span>
+                  </a>
+                  <a id="emailLink" class="br-50 p-3 text-center text-white theme-bg-1 w-100" target="_blank">
+                     <span><img src="assets/img/custom/mail.png" alt="Email" style="width: 20px; margin-right: 10px;"> Email</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <style>
+         /* Contact Modal Specific Styles */
+         .contact-content {
+            padding: 20px;
+         }
+         
+         .contact-content .ca-btn,
+         .contact-content .ca-btn-2,
+         .contact-content .ca-btn-3,
+         .contact-content .ca-btn-4 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+         }
+         
+         .contact-content .ca-btn {
+            background: var(--theme-color);
+            color: #fff;
+         }
+         
+         .contact-content .ca-btn-2 {
+            background: #25D366; /* WhatsApp green */
+            color: #fff;
+         }
+         
+         .contact-content .ca-btn-3 {
+            background: #34B7F1; /* SMS blue */
+            color: #fff;
+         }
+         
+         .contact-content .ca-btn-4 {
+            background: #6c757d; /* Bootstrap secondary */
+            color: #fff;
+         }
+         
+         .contact-content .ca-btn:hover,
+         .contact-content .ca-btn-2:hover,
+         .contact-content .ca-btn-3:hover,
+         .contact-content .ca-btn-4:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+         }
+      </style>
    </body>
 </html>

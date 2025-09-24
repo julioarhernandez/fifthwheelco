@@ -534,6 +534,122 @@ $('.ca-brand-slides-2').slick({
 		});
 	}
 	loader();
+
+
+  // form submit
+  $(document).ready(function() {
+    // Reset form validation on input
+    $('input, textarea').on('input', function() {
+      $(this).removeClass('is-invalid');
+    });
+    
+    // Contact form submission
+    $("#contactForm").on("submit", function(e){
+      e.preventDefault();
+      
+      // Reset previous validation states
+      $('.is-invalid').removeClass('is-invalid');
+      
+      // Get form elements
+      const nameInput = $("#name");
+      const messageInput = $("#message");
+      
+      // Validate required fields
+      let isValid = true;
+      
+      if (!nameInput.val().trim()) {
+        nameInput.addClass('is-invalid');
+        isValid = false;
+      }
+      
+      if (!messageInput.val().trim()) {
+        messageInput.addClass('is-invalid');
+        isValid = false;
+      }
+      
+      // If form is not valid, stop here
+      if (!isValid) {
+        // Scroll to first invalid field
+        $('html, body').animate({
+          scrollTop: $('.is-invalid').first().offset().top - 100
+        }, 500);
+        return false;
+      }
+      
+      // Get form values if valid
+      let name = encodeURIComponent(nameInput.val().trim());
+      let last_name = encodeURIComponent($("#last_name").val().trim());
+      let phone = encodeURIComponent($("#phone").val().trim());
+      let email = encodeURIComponent($("#email").val().trim());
+      let msg = encodeURIComponent(messageInput.val().trim());
+  
+      // Build deep links with proper formatting
+      const fullName = `${name} ${last_name}`.trim();
+      const messageText = `Hi, my name is ${fullName}. I'm interested in your services.\n\nPhone: ${phone}\nEmail: ${email}\n\nMessage: ${msg}`;
+      
+      // Encode the message for URLs
+      const encodedMessage = encodeURIComponent(messageText);
+      
+      // Build contact links
+      const whatsappURL = `https://wa.me/17867928526?text=${encodedMessage}`;
+      const smsURL = `sms:17867928526?body=${encodedMessage}`;
+      const emailURL = `mailto:fifthwheelc@gmail.com?subject=New%20Contact%20Request&body=${encodedMessage}`;
+  
+      // Update modal links
+      $("#whatsappLink").attr({
+        href: whatsappURL,
+        'data-name': 'WhatsApp',
+        'data-category': 'Contact',
+        'data-action': 'Click',
+        'data-label': 'Contact Form WhatsApp'
+      });
+      
+      $("#smsLink").attr({
+        href: smsURL,
+        'data-name': 'SMS',
+        'data-category': 'Contact',
+        'data-action': 'Click',
+        'data-label': 'Contact Form SMS'
+      });
+      
+      $("#emailLink").attr({
+        href: emailURL,
+        'data-name': 'Email',
+        'data-category': 'Contact',
+        'data-action': 'Click',
+        'data-label': 'Contact Form Email'
+      });
+      
+      // Show the modal
+      const modal = document.getElementById('contactModal');
+      modal.style.display = 'block';
+      modal.style.opacity = '1';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    // Close modal when clicking the close button
+    $('.ca-close-modal').on('click', function() {
+      const modal = document.getElementById('contactModal');
+      modal.style.opacity = '0';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }, 300);
+    });
+    
+    // Close modal when clicking outside the content
+    $(window).on('click', function(e) {
+      const modal = document.getElementById('contactModal');
+      if (e.target === modal) {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }, 300);
+      }
+    });
+  });
+
   
 });
 
