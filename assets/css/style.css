@@ -1794,8 +1794,8 @@ section.ca-hero-area-1 {
 }
 
 .ca-slider-heading{
-    font-size: 58px;
-    line-height: 72px;
+    font-size: 48px;
+    line-height: 60px;
     font-weight: 600;
 }
 .ca-slider-content-2 p{
@@ -3815,7 +3815,7 @@ h3.ca-project-hov-title a{
                    Working Style 3
 ============================================ */
 
-.subtitle-bg-7:after {
+/* .subtitle-bg-7:after {
     position: absolute;
     content: "";
     height: 14px;
@@ -3823,7 +3823,7 @@ h3.ca-project-hov-title a{
     background: #fff;
     top: 9px;
     left: 12px;
-}
+} */
 
 .ca-working-section-3 p {
     color: #CCCDCF;
