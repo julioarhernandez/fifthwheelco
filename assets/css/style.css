@@ -3197,7 +3197,6 @@ transition: .5s;
     object-fit: cover;
     width:100%;
 }
-
 .slide h3 {
 position: absolute;
 font-size: 24px;
@@ -7195,7 +7194,7 @@ button.ca-btn-primary.ca-btn-primary-2 span {
 	animation: spinner 1s infinite linear;
 	border-radius: 50%;
 	border: 3px solid rgba(0, 0, 0, 0.2);
-	border-top-color: #048ec5;
+	border-top-color: var(--main-color);
 	height: 150px;
 	margin: 0 auto 3.5em auto;
 	width: 150px;

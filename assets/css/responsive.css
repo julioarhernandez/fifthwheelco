@@ -606,6 +606,7 @@
 
 /* Extra small Device */
 @media (max-width: 767px){
+
     br{
         display: none;
     }
@@ -978,6 +979,51 @@
         margin-top: 20px;
         margin-bottom: 10px;
     }
+
+
+    .slide:not(.active):has(img.expand-slide-img):before {
+        content: ' ';
+        position: absolute;
+        inset: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: var(--main-color-faded);
+    }
+    .slide:not(.active):has(img.expand-slide-img):after {
+        background-image: url(/assets/img/custom/hand-pointer.png);
+        background-size: 30px;
+        background-position: 5% 95%;
+        background-repeat: no-repeat;
+        content: "";
+        position: absolute;
+        inset: 0;
+        display: block;
+        filter: invert(1);
+        opacity: 0.7;
+    }
+    .ca-portfilo-2 .ca-single-pro-img-3:has(img):before {
+        content: ' ';
+        position: absolute;
+        inset: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: var(--main-color-faded);
+    }
+    .ca-portfilo-2 .ca-single-pro-img-3:has(img):after {
+        background-image: url(/assets/img/custom/hand-pointer.png);
+        background-size: 30px;
+        background-position: 5% 95%;
+        background-repeat: no-repeat;
+        content: "";
+        position: absolute;
+        inset: 0;
+        display: block;
+        filter: invert(1);
+        opacity: 0.7;
+    }
+
 
      /* portfolio area css */
      .ca-portfolio-img img {
