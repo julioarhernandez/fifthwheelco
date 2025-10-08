@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <!-- Primary Meta Tags -->
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Fifth Wheel Co. - Heavy Equipment Solutions</title>
-      <!-- fav icon -->
-      <link rel="shortcut icon" href="assets/img/icon/ca-fav-3.svg">
-      <!-- css file -->
+      <meta name="description" content="Fifth Wheel Co USA - Professional transportation and logistics services. reliable, efficient, and affordable solutions for all your shipping needs.">
+      <meta name="keywords" content="fifth wheel, transportation, logistics, shipping, freight, USA, trucking, hauling">
+      <meta name="author" content="Fifth Wheel Co USA">
+      <meta name="robots" content="index, follow">
+      
+      <!-- Page-specific title will be set by individual pages -->
+      <title>@@if (context.title) {@@title}@@if (!context.title) {Fifth Wheel Co USA - Professional transportation & Logistics}</title>
+      
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="/assets/img/icon/ca-fav-3.svg">
+      
+      <!-- Canonical URL -->
+      <link rel="canonical" href="https://www.fifthwheelcousa.com@@if (context.url) {@@url}@@if (!context.url) {/}" />
+      
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://www.fifthwheelcousa.com@@if (context.url) {@@url}@@if (!context.url) {/}">
+      <meta property="og:title" content="@@if (context.ogTitle) {@@ogTitle}@@if (!context.ogTitle) {Fifth Wheel Co USA - Professional transportation &amp; Logistics}">
+      <meta property="og:description" content="@@if (context.ogDescription) {@@ogDescription}@@if (!context.ogDescription) {Reliable, efficient, and affordable transportation and logistics solutions for all your shipping needs across the USA.}">
+      <meta property="og:image" content="@@if (context.ogImage) {@@ogImage}@@if (!context.ogImage) {https://www.fifthwheelcousa.com/assets/img/og-image.jpg}">
+      
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:url" content="https://www.fifthwheelcousa.com@@if (context.url) {@@url}@@if (!context.url) {/}">
+      <meta name="twitter:title" content="@@if (context.ogTitle) {@@ogTitle}@@if (!context.ogTitle) {Fifth Wheel Co USA - Professional transportation &amp; Logistics}">
+      <meta name="twitter:description" content="@@if (context.ogDescription) {@@ogDescription}@@if (!context.ogDescription) {Reliable, efficient, and affordable transportation and logistics solutions for all your shipping needs across the USA.}">
+      <meta name="twitter:image" content="@@if (context.ogImage) {@@ogImage}@@if (!context.ogImage) {https://www.fifthwheelcousa.com/assets/img/og-image.jpg}">
+      
+      <!-- CSS Files -->
       <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
       <link rel="stylesheet" href="/assets/css/all.css">
       <link rel="stylesheet" href="/assets/css/magnific-popup.css">
@@ -17,20 +43,40 @@
       <link rel="stylesheet" href="/assets/css/aos.css">
       <link rel="stylesheet" href="/assets/css/style.css">
       <link rel="stylesheet" href="/assets/css/responsive.css">
-
-        <!-- Google tag (gtag.js) -->
+      
+      <!-- Google Tag Manager -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17633419724"></script>
       <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-17633419724');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17633419724');
+      </script>
+      
+      <!-- JSON-LD Structured Data -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Fifth Wheel Co USA",
+        "url": "https://www.fifthwheelcousa.com",
+        "logo": "https://www.fifthwheelcousa.com/assets/img/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-786-540-0891",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        "sameAs": [
+          "https://www.tiktok.com/@paveljimenez52?_t=ZP-8wDJohxmcZz&_r=1"
+        ]
+      }
       </script>
 
    </head>
    <body>
       <!-- preloader -->
+
       <div id="preloader">   
          <div id="ctn-preloader" class="ctn-preloader">
             <div class="animation-preloader">
