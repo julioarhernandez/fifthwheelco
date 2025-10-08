@@ -9,9 +9,13 @@ function clean() {
   return deleteAsync(['dist/**', '!dist']);
 }
 
-// Copy assets
+// Copy assets and root files
 function copyAssets() {
-  return gulp.src(['assets/**/*', '!assets/sass/**/*'], { base: '.' })
+  return gulp.src([
+    'assets/**/*', 
+    '!assets/sass/**/*',
+    'sitemap.xml'
+  ], { base: '.' })
     .pipe(gulp.dest('dist'));
 }
 
