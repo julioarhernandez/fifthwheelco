@@ -51,6 +51,24 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-17633419724');
+
+        // Updated version that doesn't block tel: links
+         function gtag_report_conversion() {
+            gtag('event', 'conversion', {
+               'send_to': 'AW-17633419724/1RbzCI7JlbAbEMzDothB'
+            });
+         }
+
+         // Automatically track clicks on tel: links
+         document.addEventListener('DOMContentLoaded', function() {
+            document.body.addEventListener('click', function(event) {
+               const link = event.target.closest('a[href^="tel:"]');
+               if (link) {
+               gtag_report_conversion();
+               // Do NOT prevent default; let the phone link open normally
+               }
+            });
+         });
       </script>
       
       <!-- JSON-LD Structured Data -->
