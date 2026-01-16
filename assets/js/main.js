@@ -650,6 +650,73 @@ $('.ca-brand-slides-2').slick({
     });
   });
 
+  function setupPromoModal(options) {
+  var settings = $.extend({
+    delayMs: 2000,
+    showOncePerSession: false,
+    autoOpen: true,
+    overlay: '#promo-overlay',
+    modal: '#promo-modal'
+  }, options || {});
+  var $overlay = $(settings.overlay);
+  var $modal = $(settings.modal);
+  if (!$overlay.length || !$modal.length) {
+    return { open: $.noop, close: $.noop, destroy: $.noop };
+  }
+  var lastFocused = null;
+  var TRANSITION_MS = 250;
+  function open() {
+    if (settings.showOncePerSession && sessionStorage.getItem('promo_shown')) return;
+    sessionStorage.setItem('promo_shown', '1');
+    lastFocused = document.activeElement;
+    $overlay.removeAttr('hidden');
+    $modal.removeAttr('hidden');
+    // force reflow to enable CSS transitions
+    void $overlay[0].offsetHeight;
+    void $modal[0].offsetHeight;
+    $overlay.addClass('open');
+    $modal.addClass('open');
+    var $focusTarget = $modal.find('.promo-cta').first();
+    if (!$focusTarget.length) $focusTarget = $modal.find('.promo-close').first();
+    if ($focusTarget.length) $focusTarget.trigger('focus');
+  }
+  function close() {
+    $overlay.removeClass('open');
+    $modal.removeClass('open');
+    setTimeout(function () {
+      $overlay.attr('hidden', 'hidden');
+      $modal.attr('hidden', 'hidden');
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }, TRANSITION_MS);
+  }
+  function outsideClick(e) {
+    if (e.target === $overlay[0]) close();
+  }
+  function keyHandler(e) {
+    if (e.key === 'Escape' || e.keyCode === 27) close();
+  }
+  function bind() {
+    $overlay.on('click.promo', outsideClick);
+    $modal.on('click.promo', '.promo-close', close);
+    $(document).on('keydown.promo', keyHandler);
+  }
+  function unbind() {
+    $overlay.off('.promo');
+    $modal.off('.promo');
+    $(document).off('.promo');
+  }
+  bind();
+  if (settings.autoOpen) setTimeout(open, settings.delayMs);
+  return { open: open, close: close, destroy: unbind };
+}
+
+  // Promo modal
+  var promo = setupPromoModal({
+    delayMs: 2000,
+    showOncePerSession: false,
+    overlay: '#promo-overlay',
+    modal: '#promo-modal'
+  });
   
 });
 
