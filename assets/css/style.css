@@ -7360,6 +7360,9 @@ button.ca-btn-primary.ca-btn-primary-2 span {
 .promo-header h1 {
   margin: 8px 40px 12px 8px; font-size: clamp(20px, 3.5vw, 28px); text-align: center; letter-spacing: .3px;
 }
+.promo-header{
+  margin-bottom: 18px; 
+}
 .promo-body { display: grid; gap: 16px; }
 .promo-image {
   width: 100%; height: auto; border-radius: 10px; object-fit: cover; border: 1px solid #eee;
@@ -7368,9 +7371,10 @@ button.ca-btn-primary.ca-btn-primary-2 span {
 .promo-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: #fafafa; border: 1px solid #eee; border-radius: 8px; }
 .price { font-weight: 700; color: #0b6; }
 .promo-important {
-  background: #fff9e6; border: 1px solid #ffe8a3; color: #7a5a00; border-radius: 8px; padding: 10px 12px;
+  line-height: 1.5;
+    background: #fff9e6; border: 1px solid #ffe8a3; color: #7a5a00; border-radius: 8px; padding: 10px 12px; font-size: 12px;
 }
-.promo-footer { display: flex; justify-content: center; margin-top: 6px; }
+.promo-footer {     margin-block: 20px; display: flex; justify-content: center; }
 .promo-cta {
   display: inline-block; padding: 12px 18px; border-radius: 999px;
   background: #0b6; color: #fff; text-decoration: none; font-weight: 700;
