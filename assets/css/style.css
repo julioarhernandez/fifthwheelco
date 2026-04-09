@@ -7437,23 +7437,40 @@ button.ca-btn-primary.ca-btn-primary-2 span {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: var(--main-color);
   border: none;
-  background: rgba(255, 255, 255, 0.7);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 0;
+  border-radius: 50px;
+  color: #fff;
   cursor: pointer;
-  transition: .3s;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
 }
+
 .promo-slider .slick-arrow:hover {
-  background: #fff;
+  background: #333;
+  transform: translateY(-50%) scale(1.1);
 }
-.promo-slider .slick-prev { left: 10px; }
-.promo-slider .slick-next { right: 10px; }
-.promo-slider .slick-prev::before { content: '←'; font-size: 16px; color: #333; }
-.promo-slider .slick-next::before { content: '→'; font-size: 16px; color: #333; }
+
+.promo-slider .slick-prev {
+  left: 15px;
+}
+
+.promo-slider .slick-next {
+  right: 15px;
+}
+
+.promo-slider .slick-next:before,
+.promo-slider .slick-prev:before {
+  content: none;
+}
 
 @-webkit-keyframes spinner {
 	to {
