@@ -671,11 +671,32 @@ $('.ca-brand-slides-2').slick({
     lastFocused = document.activeElement;
     $overlay.removeAttr('hidden');
     $modal.removeAttr('hidden');
+    
+    // Initialize slider if not already done
+    var $slider = $modal.find('.promo-slider');
+    if (!$slider.hasClass('slick-initialized')) {
+      $slider.slick({
+        dots: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        infinite: true,
+        fade: true,
+        cssEase: 'linear'
+      });
+    }
+
     // force reflow to enable CSS transitions
     void $overlay[0].offsetHeight;
     void $modal[0].offsetHeight;
     $overlay.addClass('open');
     $modal.addClass('open');
+
+    // Refresh slider position after modal is open
+    setTimeout(function() {
+      $slider.slick('setPosition');
+    }, TRANSITION_MS);
+
     var $focusTarget = $modal.find('.promo-cta').first();
     if (!$focusTarget.length) $focusTarget = $modal.find('.promo-close').first();
     if ($focusTarget.length) $focusTarget.trigger('focus');
