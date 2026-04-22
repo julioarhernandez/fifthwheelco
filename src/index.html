@@ -256,18 +256,18 @@
 
 
     <!-- video area start -->
-    <section class="video-play-section">
-       <div class="container">
-          <div class="ca-video-img br-7 p-relative z-index-1" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-             <video id="shopify-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" poster="assets/img/portfolio/ca-project3.4.png">
-                <source src="https://fifthwheelco.myshopify.com/cdn/shop/videos/c/vp/0f3183c95b5e4f4797bd5bca8c8eee2d/0f3183c95b5e4f4797bd5bca8c8eee2d.HD-1080p-3.3Mbps-47513429.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-             </video>
-             <a href="#" class="video-play-button" id="play-video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
-                <span><i class="fa-solid fa-play"></i></span>
-             </a>
-          </div>
-       </div>
+     <section class="video-play-section">
+        <div class="container">
+           <div class="ca-video-img br-7 p-relative z-index-1" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+              <video id="shopify-video" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" poster="assets/img/portfolio/ca-project3.4.png">
+                 <source src="assets/img/video.mp4" type="video/mp4">
+                 Your browser does not support the video tag.
+              </video>
+              <a href="#" class="video-play-button" id="play-video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+                 <span><i class="fa-solid fa-play"></i></span>
+              </a>
+           </div>
+        </div>
        <script>
           document.addEventListener('DOMContentLoaded', function() {
              const video = document.getElementById('shopify-video');
