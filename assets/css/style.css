@@ -859,6 +859,17 @@ header.header-2.stiky.scroll-header .ca-header-bg-2 {
     line-height: 16px;
     display: inline-block;
     transition: .3s;
+
+}
+@media (max-width: 1200px) {
+    .ca-main-menu-3 ul li > a {
+        padding: 0px 10px;
+    }
+}
+@media (max-width: 992px) {
+    .hide-mobile {
+        display: none !important;
+    }
 }
 .ca-main-menu-3 ul li:hover > a{
     color: var(--main-color);
