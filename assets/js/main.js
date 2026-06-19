@@ -740,6 +740,7 @@ $(document).ready(function () {
     overlay: '#promo-overlay',
     modal: '#promo-modal'
   });
+  window.openPromoModal = promo.open;
 
 });
 

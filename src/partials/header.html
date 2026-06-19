@@ -384,25 +384,38 @@
 
    <script>
       document.addEventListener('DOMContentLoaded', function () {
-         // Get modal elements
          const modal = document.getElementById('paymentModal');
          const paymentLink = document.getElementById('payment-link');
          const mobilePaymentLink = document.getElementById('mobile-payment-link');
          const closeBtn = document.querySelector('.ca-close-modal');
 
-         // Function to open modal
-         function openModal() {
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+         function setDismissed() {
+            var expires = new Date(Date.now() + 24 * 60 * 60 * 1000).toUTCString();
+            document.cookie = 'payment_modal_dismissed=1; expires=' + expires + '; path=/';
          }
 
-         // Function to close modal
+         function isDismissed() {
+            return document.cookie.split(';').some(function (c) {
+               return c.trim().indexOf('payment_modal_dismissed=') === 0;
+            });
+         }
+
+         function openModal(force) {
+            if (!force && isDismissed()) return;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+         }
+
          function closeModal() {
             modal.classList.remove('show');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            document.body.style.overflow = 'auto';
+            setDismissed();
          }
 
-         // Event listeners
+         window.openPaymentModal = function () {
+            openModal(true);
+         };
+
          if (paymentLink) {
             paymentLink.addEventListener('click', function (e) {
                e.preventDefault();
@@ -414,7 +427,6 @@
             mobilePaymentLink.addEventListener('click', function (e) {
                e.preventDefault();
                openModal();
-               // Close mobile menu if open
                const offcanvas = document.querySelector('.ca-offcanvas');
                const offcanvasToggle = document.querySelector('.ca-offcanvas-close-toggle');
                if (offcanvas && offcanvasToggle) {
@@ -427,14 +439,12 @@
             closeBtn.addEventListener('click', closeModal);
          }
 
-         // Close when clicking outside the modal content
          window.addEventListener('click', function (e) {
             if (e.target === modal) {
                closeModal();
             }
          });
 
-         // Close with Escape key
          document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && modal.classList.contains('show')) {
                closeModal();
