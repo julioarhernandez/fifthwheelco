@@ -736,7 +736,7 @@ $(document).ready(function () {
   // Promo modal
   var promo = setupPromoModal({
     delayMs: 2000,
-    showOncePerSession: false,
+    showOncePerSession: true,
     overlay: '#promo-overlay',
     modal: '#promo-modal'
   });
