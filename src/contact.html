@@ -124,4 +124,17 @@
        <!-- contact form end -->
 </main>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var params = new URLSearchParams(window.location.search);
+    var product = params.get('product');
+    if (product) {
+      var msg = document.getElementById('message');
+      if (msg) msg.value = 'I am interested in: ' + product;
+      var form = document.querySelector('.ca-conatct-form1');
+      if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+</script>
+
 @@include('partials/footer.html')
